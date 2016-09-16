@@ -9,7 +9,7 @@ var Ajax = (function() {
   };
 
   var getPuppyBreeds = function() {
-    $.get("https://ajax-puppies.herokuapp.com/breeds.json", function(json){
+    return $.get("https://ajax-puppies.herokuapp.com/breeds.json", function(json){
       return json;
     });
   };

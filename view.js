@@ -3,7 +3,7 @@ APP = APP || {};
 var View =  (function() {
 
   var renderDropDown = function(breedList) {
-    $breedList = $('#breed-list');
+    var $breedList = $('#breed-list');
     breedList.forEach( function(el) {
       $('<option>').text(el).appendTo($breedList);
     });
@@ -12,7 +12,7 @@ var View =  (function() {
 
 
   return {
-    init: function(breedList) {
+    render: function(breedList) {
       renderDropDown(breedList);
     },
   };

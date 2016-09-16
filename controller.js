@@ -4,11 +4,11 @@ var Controller = (function(View, Model, Ajax) {
 
   return {
     init: function() {
-      Model.init();
-      View.init(Model.getBreedList());
-    },
+      Model.update().then(function() {
+        View.render(Model.getBreedList());
+      });
+    }
   }
-
 })(APP.View, APP.Model, APP.Ajax);
 
 
