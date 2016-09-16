@@ -4,7 +4,9 @@ var APP = APP || {};
 var Ajax = (function() {
 
   var getPuppyList = function() {
-    console.log("matt is nice");
+    return $.get("https://ajax-puppies.herokuapp.com/puppies.json", function(json){
+      return json;
+    });
 
   };
 
@@ -13,6 +15,9 @@ var Ajax = (function() {
       return json;
     });
   };
+
+
+
 
   return {
     getPuppyList: getPuppyList,

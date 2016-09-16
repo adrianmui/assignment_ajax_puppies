@@ -9,11 +9,33 @@ var View =  (function() {
     });
   };
 
+  var renderPuppyList = function(puppyList) {
+    console.log("matt where puppy at");
+    debugger;
+    var $puppyList = $('#puppy-list');
+    puppyList.forEach(function(el) {
+      $('<li>')
+        .text(el.name+ ", " + el.breed + "," + el.created_at)
+        .appendTo($puppyList);
+
+    });
+  }
+
+  // var submitListener = function () {
+  //   $('form').submit(function(e) {
+  //     e.preventDefault();
+
+  //     var $puppyList = $('#puppy-list');
+
+  //   })
+    
+  // };
 
 
   return {
-    render: function(breedList) {
+    render: function(breedList, puppyList) {
       renderDropDown(breedList);
+      renderPuppyList(puppyList);
     },
   };
 
