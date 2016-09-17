@@ -4,16 +4,14 @@ var Controller = (function(View, Model, Ajax) {
 
   return {
     init: function() {
-      var puppyPromise = Model.updatePuppyList();
-      var breedPromise = Model.updateBreedList();
-
-      puppyPromise.done( function( puppy){
+      Model.updatePuppyList().then(function(puppy) {
         View.renderPuppyList(Model.getPuppyList());
       });
-      
-      breedPromise.done( function( breed){
+
+      Model.updateBreedList().then(function(breed) {
         View.renderDropDown(Model.getBreedList());
       });
+
 
                 
     }
