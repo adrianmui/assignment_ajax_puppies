@@ -29,14 +29,12 @@ var View =  (function() {
   //   })
     
   // };
-
-
   return {
-    render: function(breedList, puppyList) {
-      renderDropDown(breedList);
-      renderPuppyList(puppyList);
-    },
+    renderPuppyList: renderPuppyList,
+    renderDropDown: renderDropDown
   };
+
+  
 
 })();
 

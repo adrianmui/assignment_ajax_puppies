@@ -38,19 +38,14 @@ var Model = (function(Ajax) {
   // getter
   var getPuppyList = function() {
     return _puppyList;
-  }
-
-  var update = function() {
-    var breedPromise = updateBreedList();
-    var puppyPromise = updatePuppyList();
-    return [breedPromise, puppyPromise];
-  }
+  };
 
   return {
     getBreedList: getBreedList,
     getPuppyList: getPuppyList,
-    update: update
-  }
+    updatePuppyList: updatePuppyList,
+    updateBreedList: updateBreedList
+  };
 
 })(APP.Ajax);
 

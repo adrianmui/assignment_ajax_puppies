@@ -4,24 +4,18 @@ var Controller = (function(View, Model, Ajax) {
 
   return {
     init: function() {
-      var promiseArr = Model.update();
-      var listenerPackage = $.when(
-        promiseArr[0], promiseArr[1]
-         //puppylistpromise
-      );
+      var puppyPromise = Model.updatePuppyList();
+      var breedPromise = Model.updateBreedList();
 
-
-
-      listenerPackage.done( function(breed, puppy) {
-        
-        console.log("hi");
-        
+      puppyPromise.done( function( puppy){
+        View.renderPuppyList(Model.getPuppyList());
       });
-      View.render(Model.getBreedList(),
-                    Model.getPuppyList());
-      // Model.update().then( function() {
-      //   View.render(Model.getBreedList());
-      // });
+      
+      breedPromise.done( function( breed){
+        View.renderDropDown(Model.getBreedList());
+      });
+
+                
     }
   }
 })(APP.View, APP.Model, APP.Ajax);
