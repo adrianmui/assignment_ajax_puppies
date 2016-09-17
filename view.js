@@ -11,11 +11,10 @@ var View =  (function() {
 
   var renderPuppyList = function(puppyList) {
     console.log("matt where puppy at");
-    debugger;
     var $puppyList = $('#puppy-list');
     puppyList.forEach(function(el) {
       $('<li>')
-        .text(el.name+ ", " + el.breed + "," + el.created_at)
+        .text(el)
         .appendTo($puppyList);
 
     });

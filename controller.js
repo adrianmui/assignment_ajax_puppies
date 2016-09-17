@@ -6,8 +6,7 @@ var Controller = (function(View, Model, Ajax) {
     init: function() {
       var promiseArr = Model.update();
       var listenerPackage = $.when(
-        promiseArr[0], //breedlistpromise
-        promiseArr[1] //puppylistpromise
+        promiseArr //puppylistpromise
       );
 
       listenerPackage.done( function(breed, puppy) {
