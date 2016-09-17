@@ -6,14 +6,19 @@ var Controller = (function(View, Model, Ajax) {
     init: function() {
       var promiseArr = Model.update();
       var listenerPackage = $.when(
-        promiseArr //puppylistpromise
+        promiseArr[0], promiseArr[1]
+         //puppylistpromise
       );
 
-      listenerPackage.done( function(breed, puppy) {
-        View.render(Model.getBreedList(),
-                    Model.getPuppyList());
-      });
 
+
+      listenerPackage.done( function(breed, puppy) {
+        
+        console.log("hi");
+        
+      });
+      View.render(Model.getBreedList(),
+                    Model.getPuppyList());
       // Model.update().then( function() {
       //   View.render(Model.getBreedList());
       // });

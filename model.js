@@ -22,9 +22,8 @@ var Model = (function(Ajax) {
     var promise = Ajax.getPuppyList();
     promise.then(function(jsonList) {
       jsonList.forEach( function(el) {
-        _puppyList.push([el.name, 
-                        el.breed, 
-                        el.created_at]);
+        _puppyList.push(el.name + ", " + el.breed.name + "," + el.created_at);
+        
       });
       //implement sort_by later
       // _breedList = _breedList.sort();
